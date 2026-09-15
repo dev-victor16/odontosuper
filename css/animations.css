@@ -1,0 +1,63 @@
+/* ==========================================================================
+   ODONTO SUPER IBIRITÉ — EFEITOS DE SCROLL SUTIS & FLUIDOS
+   ========================================================================== */
+
+:root {
+  --reveal-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --reveal-duration: 0.9s;
+}
+
+/* Estado inicial discreto — sem saltos bruscos */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity var(--reveal-duration) var(--reveal-ease),
+              transform var(--reveal-duration) var(--reveal-ease);
+  will-change: opacity, transform;
+}
+
+/* Quando entra em foco na rolagem */
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variações sutis para fluidez e naturalidade */
+[data-reveal="fade"] {
+  transform: none;
+  transition: opacity 1s var(--reveal-ease);
+}
+
+[data-reveal="fade"].is-revealed {
+  opacity: 1;
+}
+
+[data-reveal="soft-zoom"] {
+  transform: scale(0.96) translateY(15px);
+}
+
+[data-reveal="soft-zoom"].is-revealed {
+  transform: scale(1) translateY(0);
+}
+
+/* Delays em cascata suave */
+[data-delay="100"] { transition-delay: 0.12s; }
+[data-delay="200"] { transition-delay: 0.22s; }
+[data-delay="300"] { transition-delay: 0.32s; }
+
+/* Parallax sutil em imagens */
+[data-parallax] {
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+/* Acessibilidade para quem prefere movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-reveal="soft-zoom"],
+  [data-parallax] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

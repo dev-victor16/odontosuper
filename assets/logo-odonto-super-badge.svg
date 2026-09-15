@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38A7E5" />
+      <stop offset="100%" stop-color="#1B87CE" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Azul Odonto Super -->
+  <rect width="500" height="500" rx="40" fill="url(#bgGrad)" />
+
+  <g transform="translate(60, 160)">
+    <!-- ÍCONE: Dente com anel orbital dinâmico -->
+    <g transform="translate(0, 0)">
+      <!-- Arco traseiro da órbita -->
+      <path d="M 12 82 C 12 70, 75 50, 125 58" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" opacity="0.85" />
+      
+      <!-- Corpo do dente -->
+      <path d="M 45 42 
+               C 30 52, 22 75, 22 95 
+               C 22 120, 32 145, 42 165 
+               C 47 175, 54 178, 60 166 
+               C 67 150, 72 135, 78 126 
+               C 81 122, 85 122, 88 126 
+               C 94 135, 99 150, 106 166 
+               C 112 178, 119 175, 124 165 
+               C 134 145, 144 120, 144 95 
+               C 144 75, 136 52, 121 42 
+               C 107 33, 93 38, 83 45 
+               C 73 38, 59 33, 45 42 Z" 
+            fill="#FFFFFF" />
+
+      <!-- Brilho / fenda sutil no dente -->
+      <path d="M 83 48 C 76 68, 62 100, 48 116" fill="none" stroke="#2395DA" stroke-width="4.5" stroke-linecap="round" />
+
+      <!-- Arco dianteiro da órbita com cauda e ponta dinâmica -->
+      <path d="M 8 108 
+               C 18 128, 75 142, 138 108 
+               C 162 95, 172 80, 165 74 
+               C 158 68, 138 74, 115 84" 
+            fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" />
+    </g>
+
+    <!-- TIPOGRAFIA: ODONTO super + 5 esferas -->
+    <g transform="translate(180, 52)">
+      <!-- ODONTO -->
+      <text x="0" y="0" font-family="'Outfit', 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="28" font-weight="800" letter-spacing="3.5" fill="#FFFFFF">ODONTO</text>
+      
+      <!-- super -->
+      <text x="0" y="66" font-family="'Outfit', 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-size="76" font-weight="800" letter-spacing="-1" fill="#FFFFFF">super</text>
+      
+      <!-- 5 esferas sob 'per' -->
+      <g transform="translate(112, 82)">
+        <circle cx="0" cy="0" r="5" fill="#FFFFFF" />
+        <circle cx="17" cy="0" r="5" fill="#FFFFFF" />
+        <circle cx="34" cy="0" r="5" fill="#FFFFFF" />
+        <circle cx="51" cy="0" r="5" fill="#FFFFFF" />
+        <circle cx="68" cy="0" r="5" fill="#FFFFFF" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,1434 @@
+/* ==========================================================================
+   ODONTO SUPER IBIRITÉ — DESIGN SYSTEM CLEAN & PROFISSIONAL
+   Identidade Oficial: Azul Odonto Super + Branco + Neutros Claros
+   Local: Rua Freitas de Oliveira, 59 — Lojas 01 e 02 — Centro, Ibirité - MG
+   Telefone / WhatsApp: (31) 99706-9312
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* --- VARIÁVEIS DE DESIGN ODONTO SUPER --- */
+:root {
+  /* Azul Odonto Super (Extraído diretamente da logo oficial) */
+  --brand-blue: #1B8BD8;
+  --brand-blue-hover: #1474B6;
+  --brand-blue-dark: #0D5687;
+  --brand-blue-light: #EBF5FB;
+  --brand-blue-subtle: rgba(27, 139, 216, 0.08);
+  --brand-blue-border: rgba(27, 139, 216, 0.22);
+  --brand-blue-glow: rgba(27, 139, 216, 0.35);
+
+  /* Branco & Superfícies Claras (Clean e Iluminado) */
+  --bg-body: #FFFFFF;
+  --bg-surface: #F8FAFC;
+  --bg-surface-subtle: #F1F5F9;
+  --bg-accent-light: #F0F7FC;
+  
+  /* Seções Escuras Sofisticadas (Azul-Marinho Profundo / Slate, NUNCA marrom ou dourado) */
+  --bg-dark: #091926;
+  --bg-dark-surface: #0E2436;
+
+  /* Tipografia Limpa & Neutra */
+  --text-main: #0F172A;       /* Slate escuro / Navy */
+  --text-body: #334155;       /* Texto corrido com alto contraste */
+  --text-muted: #64748B;      /* Apoio e legendas */
+  --text-white: #FFFFFF;
+  --text-white-dim: #94A3B8;
+
+  /* Linhas e Divisórias Delicadas */
+  --hairline: rgba(15, 23, 42, 0.08);
+  --hairline-blue: rgba(27, 139, 216, 0.16);
+  --hairline-dark: rgba(255, 255, 255, 0.12);
+
+  /* Fontes Modernas e Humanas */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Curvaturas Naturais e Amigáveis */
+  --radius-btn: 8px;
+  --radius-card: 12px;
+  --radius-sm: 6px;
+  --radius-pill: 999px;
+
+  /* Espaçamentos e Layout */
+  --container-max: 1220px;
+  --section-spacing: clamp(5rem, 8vw, 7.5rem);
+
+  /* Transições Orgânicas */
+  --ease-natural: cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fast: 0.22s var(--ease-natural);
+  --t-smooth: 0.45s var(--ease-natural);
+}
+
+/* --- RESET BÁSICO --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, select {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* --- CONTAINER CENTRALIZADO --- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 3.5vw, 2.5rem);
+  padding-right: clamp(1.25rem, 3.5vw, 2.5rem);
+}
+
+/* --- DETALHES EDITORIAIS & EYEBROWS --- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-blue);
+  margin-bottom: 0.85rem;
+}
+
+.eyebrow-dark {
+  color: #60BAFF;
+}
+
+.eyebrow-line {
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+/* --- TIPOGRAFIA MODERNA & CLEAN --- */
+.title-hero {
+  font-family: var(--font-heading);
+  font-size: clamp(2.3rem, 5vw, 3.85rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+}
+
+.title-hero span.accent {
+  color: #60BAFF;
+  font-weight: 600;
+}
+
+.title-editorial {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 3.2vw, 2.55rem);
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+.title-editorial.light {
+  color: #FFFFFF;
+}
+
+.lead-text {
+  font-size: clamp(1.025rem, 1.2vw, 1.16rem);
+  color: var(--text-body);
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+.lead-text.light {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* --- BOTÕES MODERNOS ODONTO SUPER --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.85rem;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all var(--t-fast);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--brand-blue);
+  color: #FFFFFF;
+  border: 1px solid var(--brand-blue);
+  box-shadow: 0 4px 14px -2px var(--brand-blue-glow);
+}
+
+.btn-primary:hover {
+  background: var(--brand-blue-hover);
+  border-color: var(--brand-blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px -4px var(--brand-blue-glow);
+}
+
+.btn-ghost-dark {
+  background: rgba(9, 25, 38, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-ghost-dark:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-outline-blue {
+  background: var(--brand-blue-subtle);
+  color: var(--brand-blue);
+  border: 1px solid var(--brand-blue-border);
+}
+
+.btn-outline-blue:hover {
+  border-color: var(--brand-blue);
+  background: var(--brand-blue);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px -4px var(--brand-blue-glow);
+}
+
+.btn-whatsapp-clean {
+  background: #25D366;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-whatsapp-clean:hover {
+  background: #20BA5A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -5px rgba(37, 211, 102, 0.45);
+}
+
+/* ==========================================================================
+   HEADER / NAVEGAÇÃO LIMPA, BRANCA & PROFISSIONAL
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.15rem 0;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--hairline-blue);
+  transition: all var(--t-fast);
+}
+
+.site-header.scrolled {
+  padding: 0.75rem 0;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-clean {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.site-logo-img {
+  height: 46px;
+  width: auto;
+  max-width: 215px;
+  object-fit: contain;
+  display: block;
+  transition: transform var(--t-fast);
+}
+
+.brand-clean:hover .site-logo-img {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.nav-links-clean {
+  display: flex;
+  align-items: center;
+  gap: 1.85rem;
+  list-style: none;
+}
+
+.nav-links-clean a {
+  color: var(--text-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: color var(--t-fast);
+  padding: 0.35rem 0;
+  position: relative;
+}
+
+.nav-links-clean a:hover {
+  color: var(--brand-blue);
+}
+
+.nav-links-clean a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--brand-blue);
+  border-radius: 2px;
+  transition: width var(--t-fast);
+}
+
+.nav-links-clean a:hover::after {
+  width: 100%;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+}
+
+.live-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--brand-blue-dark);
+  background: var(--brand-blue-light);
+  padding: 0.38rem 0.85rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--brand-blue-border);
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #25D366;
+  display: inline-block;
+  box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.2);
+}
+
+.nav-toggle-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  background: var(--brand-blue-light);
+  border: 1px solid var(--brand-blue-border);
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-toggle-btn:hover {
+  background: var(--brand-blue-subtle);
+  border-color: var(--brand-blue);
+  transform: translateY(-1px);
+}
+
+.nav-toggle-btn span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--brand-blue-dark);
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+/* ==========================================================================
+   HERO IMERSIVO COM FOTO DE FUNDO CLEAN & NATURAL
+   ========================================================================== */
+.hero-immersive {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: calc(85px + clamp(3rem, 6vw, 5.5rem));
+  padding-bottom: clamp(4rem, 7vw, 6.5rem);
+  background: var(--bg-dark);
+}
+
+.hero-bg-media {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 115%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(9, 25, 38, 0.68) 0%,
+    rgba(9, 25, 38, 0.35) 45%,
+    rgba(9, 25, 38, 0.85) 100%
+  ),
+  linear-gradient(
+    90deg,
+    rgba(9, 25, 38, 0.88) 0%,
+    rgba(9, 25, 38, 0.55) 55%,
+    rgba(9, 25, 38, 0.15) 100%
+  );
+}
+
+.hero-content-immersive {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.title-hero {
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6);
+}
+
+.lead-text.light {
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+/* Avaliação do Google e Endereço sem cards */
+.hero-google-rating-clean {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 1.15rem;
+}
+
+.hero-stars-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #FFFFFF;
+  font-size: 0.95rem;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero-stars-row .stars {
+  color: #FFB800;
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+}
+
+.hero-stars-row .rating-val {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.hero-stars-row .rating-reviews {
+  color: var(--text-white-dim);
+  font-size: 0.82rem;
+}
+
+.hero-address-line {
+  font-size: 0.88rem;
+  color: #E2E8F0;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* ==========================================================================
+   FITA DE CREDIBILIDADE (4 PILARES COM LINHAS FINAS)
+   ========================================================================== */
+.ribbon-section {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--hairline-blue);
+  padding: 1.85rem 0;
+}
+
+.ribbon-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.ribbon-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ribbon-item strong {
+  font-family: var(--font-heading);
+  font-size: 1.08rem;
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.ribbon-item span {
+  font-size: 0.835rem;
+  color: var(--text-muted);
+}
+
+.ribbon-divider {
+  width: 1px;
+  height: 32px;
+  background: var(--hairline-blue);
+}
+
+/* ==========================================================================
+   SOBRE A ODONTO SUPER IBIRITÉ (+30 ANOS DE EXPERIÊNCIA)
+   ========================================================================== */
+.about-clean-section {
+  padding: var(--section-spacing) 0;
+  background: var(--bg-body);
+}
+
+.about-editorial-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: clamp(3rem, 6vw, 5.5rem);
+  align-items: center;
+}
+
+.about-image-col {
+  position: relative;
+}
+
+.about-photo-frame {
+  width: 100%;
+  aspect-ratio: 4 / 3.4;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: 0 16px 36px -12px rgba(27, 139, 216, 0.12);
+  border: 1px solid var(--hairline-blue);
+}
+
+.about-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-caption {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
+.about-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.about-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--text-body);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.about-points {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--hairline-blue);
+}
+
+.about-point {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.point-line {
+  width: 12px;
+  height: 2px;
+  background: var(--brand-blue);
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   DESTAQUE ESPECIAL: IMPLANTES DENTÁRIOS
+   ========================================================================== */
+.implant-spotlight-section {
+  padding: var(--section-spacing) 0;
+  background: var(--bg-accent-light);
+  border-top: 1px solid var(--hairline-blue);
+  border-bottom: 1px solid var(--hairline-blue);
+}
+
+.implant-spotlight-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(3rem, 6vw, 5.5rem);
+  align-items: center;
+}
+
+.implant-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--brand-blue);
+  color: #FFFFFF;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.implant-features-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.implant-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.implant-feature-item svg {
+  color: var(--brand-blue);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.implant-feature-item strong {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.implant-feature-item span {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.implant-photo-frame {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: 0 18px 40px -12px rgba(27, 139, 216, 0.18);
+  border: 1px solid var(--hairline-blue);
+}
+
+.implant-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   TRATAMENTOS (CATÁLOGO VISUAL LIMPO & HIERÁRQUICO)
+   ========================================================================== */
+.treatments-clean-section {
+  padding: var(--section-spacing) 0;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--hairline-blue);
+}
+
+.section-intro-editorial {
+  max-width: 700px;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.treatments-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 2rem;
+}
+
+.treatment-editorial-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: var(--bg-body);
+  border: 1px solid var(--hairline-blue);
+  border-radius: var(--radius-card);
+  padding: 1.25rem;
+  transition: transform var(--t-fast), box-shadow var(--t-fast), border-color var(--t-fast);
+}
+
+.treatment-editorial-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-blue);
+  box-shadow: 0 12px 30px -8px rgba(27, 139, 216, 0.15);
+}
+
+.treatment-img-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10.5;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  background: var(--bg-surface-subtle);
+}
+
+.treatment-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--t-smooth);
+}
+
+.treatment-editorial-item:hover .treatment-img-wrap img {
+  transform: scale(1.04);
+}
+
+.treatment-info h3 {
+  font-family: var(--font-heading);
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+
+.treatment-info p {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   COMO ATENDEMOS (PASSO A PASSO RETILÍNEO & SEGURO)
+   ========================================================================== */
+.journey-clean-section {
+  padding: var(--section-spacing) 0;
+  background: var(--bg-dark);
+  color: #FFFFFF;
+}
+
+.journey-editorial-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(3rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.journey-steps-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.step-row {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--hairline-dark);
+}
+
+.step-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.step-num {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #60BAFF;
+  min-width: 32px;
+}
+
+.step-content h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.25rem;
+}
+
+.step-content p {
+  font-size: 0.89rem;
+  color: var(--text-white-dim);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   DIFERENCIAIS REAIS (COLUNAS COM LINHAS RETAS EM AZUL)
+   ========================================================================== */
+.differentials-clean-section {
+  padding: var(--section-spacing) 0;
+  background: var(--bg-body);
+}
+
+.diff-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.pillar-editorial {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  border-left: 2px solid var(--brand-blue);
+  padding-left: 1.5rem;
+}
+
+.pillar-num {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--brand-blue);
+  letter-spacing: 0.05em;
+}
+
+.pillar-editorial h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.pillar-editorial p {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   LOCALIZAÇÃO & HORÁRIOS IBIRITÉ
+   ========================================================================== */
+.location-clean-section {
+  padding: var(--section-spacing) 0;
+  background: var(--bg-surface);
+  border-top: 1px solid var(--hairline-blue);
+}
+
+.location-clean-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(2.5rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.location-info-clean {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.loc-block h4 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+
+.loc-block p {
+  font-size: 0.93rem;
+  color: var(--text-body);
+  line-height: 1.55;
+}
+
+.clean-schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.clean-schedule-table tr {
+  border-bottom: 1px solid var(--hairline-blue);
+}
+
+.clean-schedule-table td {
+  padding: 0.55rem 0;
+}
+
+.clean-schedule-table td:last-child {
+  text-align: right;
+  font-weight: 700;
+  color: var(--brand-blue-dark);
+}
+
+.map-frame-clean {
+  width: 100%;
+  min-height: 400px;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid var(--hairline-blue);
+  box-shadow: 0 12px 30px -8px rgba(27, 139, 216, 0.12);
+}
+
+.map-frame-clean iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  border: 0;
+}
+
+/* ==========================================================================
+   CTA PRÉ-FOOTER
+   ========================================================================== */
+.pre-footer-cta {
+  padding: clamp(4.5rem, 7vw, 6.5rem) 0;
+  background: var(--bg-dark);
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.pre-footer-cta .container {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* ==========================================================================
+   FOOTER INSTITUCIONAL CLEAN
+   ========================================================================== */
+.footer-clean {
+  background: #06111B;
+  color: #FFFFFF;
+  padding: 3.5rem 0 3rem;
+  border-top: 1px solid var(--hairline-dark);
+}
+
+.footer-clean-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2.25rem;
+  font-size: 0.85rem;
+  color: var(--text-white-dim);
+}
+
+.footer-brand-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-logo-img {
+  height: 44px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+  color: #60BAFF;
+  max-width: 360px;
+  line-height: 1.5;
+}
+
+.footer-info-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  text-align: right;
+  line-height: 1.55;
+}
+
+.footer-clean-inner a:hover {
+  color: #60BAFF;
+}
+
+/* ==========================================================================
+   WHATSAPP FLUTUANTE REDONDO COM PULSO
+   ========================================================================== */
+.whatsapp-float-clean {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  border-radius: 50% !important;
+  background: #25D366;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float-clean:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.65);
+  color: #FFFFFF;
+}
+
+.whatsapp-float-clean svg {
+  display: block;
+  width: 32px;
+  height: 32px;
+  fill: #FFFFFF;
+}
+
+.whatsapp-float-clean::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 211, 102, 0.6);
+  animation: waPulse 2.4s infinite;
+  pointer-events: none;
+}
+
+@keyframes waPulse {
+  0% { transform: scale(0.96); opacity: 0.9; }
+  50% { transform: scale(1.22); opacity: 0; }
+  100% { transform: scale(0.96); opacity: 0; }
+}
+
+/* ==========================================================================
+   BARRA LATERAL / MENU MOBILE (DRAWER)
+   ========================================================================== */
+.mobile-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(9, 25, 38, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.mobile-drawer-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-drawer-clean {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(340px, 86vw);
+  background: #FFFFFF;
+  border-left: 1px solid var(--hairline-blue);
+  z-index: 2200;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -12px 0 35px rgba(15, 23, 42, 0.15);
+  overflow-y: auto;
+}
+
+.mobile-drawer-clean.is-open {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1.75rem;
+  border-bottom: 1px solid var(--hairline-blue);
+}
+
+.drawer-logo-img {
+  height: 40px;
+  width: auto;
+  max-width: 175px;
+  object-fit: contain;
+  display: block;
+}
+
+.mobile-drawer-close {
+  background: var(--brand-blue-light);
+  border: 1px solid var(--brand-blue-border);
+  color: var(--brand-blue-dark);
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-btn);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobile-drawer-close:hover {
+  background: var(--brand-blue);
+  border-color: var(--brand-blue);
+  color: #FFFFFF;
+}
+
+.drawer-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.drawer-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--brand-blue-light);
+  border: 1px solid var(--brand-blue-border);
+  color: var(--brand-blue-dark);
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.drawer-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  list-style: none;
+}
+
+.drawer-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 0.5rem;
+  color: var(--text-main);
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--hairline);
+  transition: all 0.2s ease;
+}
+
+.drawer-nav a .nav-num {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--brand-blue);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.drawer-nav a:hover {
+  color: var(--brand-blue);
+  padding-left: 0.85rem;
+}
+
+.drawer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.btn-block {
+  width: 100%;
+  justify-content: center;
+}
+
+.drawer-footer-info {
+  font-size: 0.82rem;
+  color: var(--text-body);
+  line-height: 1.5;
+  border-top: 1px solid var(--hairline-blue);
+  padding-top: 1.15rem;
+}
+
+.drawer-footer-info strong {
+  color: var(--text-main);
+}
+
+.drawer-phone {
+  color: var(--brand-blue);
+  font-weight: 700;
+  margin-top: 0.25rem;
+}
+
+/* ==========================================================================
+   MODAL DE AGENDAMENTO LIMPO
+   ========================================================================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(9, 25, 38, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--t-fast);
+}
+
+.modal-backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  background: var(--bg-body);
+  width: 100%;
+  max-width: 480px;
+  border-radius: var(--radius-card);
+  padding: clamp(2rem, 4vw, 2.5rem);
+  position: relative;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.2);
+  border: 1px solid var(--hairline-blue);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: var(--brand-blue-light);
+  color: var(--brand-blue);
+}
+
+.modal-logo-img {
+  height: 42px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 0.95rem;
+}
+
+.modal-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+  text-align: center;
+}
+
+.modal-header p {
+  font-size: 0.88rem;
+  color: var(--text-body);
+  margin-bottom: 1.35rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.15rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.4rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid var(--hairline-blue);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  color: var(--text-main);
+  outline: none;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+
+.form-control:focus {
+  border-color: var(--brand-blue);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px var(--brand-blue-subtle);
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MOBILE & TABLET)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-content-immersive {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .about-editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .implant-spotlight-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .treatments-visual-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .journey-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diff-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .location-clean-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-logo-img {
+    height: 38px;
+    max-width: 170px;
+  }
+
+  .nav-links-clean, .live-status {
+    display: none;
+  }
+
+  .nav-toggle-btn {
+    display: flex;
+  }
+
+  .ribbon-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .ribbon-divider {
+    display: none;
+  }
+
+  .implant-features-list {
+    grid-template-columns: 1fr;
+  }
+
+  .treatments-visual-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-clean-inner {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-brand-side {
+    align-items: center;
+  }
+
+  .footer-info-side {
+    text-align: center;
+  }
+}
